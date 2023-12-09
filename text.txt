@@ -1,0 +1,23 @@
+# Sequential Processing
+wget --method=POST --header="Content-Type: application/json" --body-data='{"to_sort": [[3, 2, 1], [6, 5, 4], [9, 8, 7]]}' http://localhost:8000/process-single
+
+# Concurrent Processing
+wget --method=POST --header="Content-Type: application/json" --body-data='{"to_sort": [[3, 2, 1], [6, 5, 4], [9, 8, 7]]}' http://localhost:8000/process-concurrent
+
+
+
+exection :
+
+Single ::
+curl --request POST \
+  --url http://localhost:8000/process-single \
+  --header 'Content-Type: application/json' \
+  --data '{"to_sort": [[3, 2, 1], [6, 5, 4], [9, 8, 7]]}'
+
+
+concurrent ::
+curl --request POST \
+  --url http://localhost:8000/process-concurrent \
+  --header 'Content-Type: application/json' \
+  --data '{"to_sort": [[3, 2, 1], [6, 5, 4], [9, 8, 7]]}'
+
